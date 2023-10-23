@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!--        <! - Database connection properties >-->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/crud</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">9707</property>
+
+        <!--        <! - Other Hibernate properties >-->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!--        <! first time it is create and then onwards update>-->
+        <property name="hbm2ddl.auto">update</property>
+
+
+        <property name="current_session_context_class">thread</property>
+
+        <property name="hibernate.dbcp.initialSize">5</property>
+        <property name="hibernate.dbcp.maxTotal">20</property>
+        <property name="hibernate.dbcp.maxIdle">10</property>
+        <property name="hibernate.dbcp.minIdle">5</property>
+        <property name="hibernate.dbcp.maxWaitMillis">-1</property>
+
+
+        <!--        <! - Mapping files or annotated classes >-->
+        <!--        <! - Add your entity classes or mapping files here  for ex: entity used below >-->
+        <mapping class="uz.pdp.data.Users"/>
+
+    </session-factory>
+</hibernate-configuration>
